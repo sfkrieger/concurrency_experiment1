@@ -1,0 +1,140 @@
+# of threads=2 time (seconds)=30 total number of operations=12540553
+12540553, 2
+# of threads=5 time (seconds)=30 total number of operations=9074986
+9074986, 5
+# of threads=10 time (seconds)=30 total number of operations=9258498
+9258498, 10
+# of threads=15 time (seconds)=30 total number of operations=8733874
+8733874, 15
+# of threads=20 time (seconds)=30 total number of operations=8208979
+8208979, 20
+# of threads=2 time (seconds)=60 total number of operations=24492385
+24492385, 2
+# of threads=5 time (seconds)=60 total number of operations=16089721
+16089721, 5
+# of threads=10 time (seconds)=60 total number of operations=16387483
+16387483, 10
+# of threads=15 time (seconds)=60 total number of operations=16223455
+16223455, 15
+# of threads=20 time (seconds)=60 total number of operations=16484053
+16484053, 20
+# of threads=2 time (seconds)=90 total number of operations=51834707
+51834707, 2
+# of threads=5 time (seconds)=90 total number of operations=27227974
+27227974, 5
+# of threads=10 time (seconds)=90 total number of operations=24756140
+24756140, 10
+# of threads=15 time (seconds)=90 total number of operations=24239625
+24239625, 15
+# of threads=20 time (seconds)=90 total number of operations=24118539
+24118539, 20
+# of threads=2 time (seconds)=120 total number of operations=60086510
+60086510, 2
+# of threads=5 time (seconds)=120 total number of operations=32117051
+32117051, 5
+# of threads=10 time (seconds)=120 total number of operations=29063179
+29063179, 10
+# of threads=15 time (seconds)=120 total number of operations=34071609
+34071609, 15
+# of threads=20 time (seconds)=120 total number of operations=36649737
+36649737, 20
+# of threads=1 time (seconds)=1 total number of operations=4637429
+4637429, 1
+# of threads=2 time (seconds)=1 total number of operations=822587
+822587, 2
+# of threads=5 time (seconds)=1 total number of operations=304697
+304697, 5
+# of threads=10 time (seconds)=1 total number of operations=309576
+309576, 10
+# of threads=15 time (seconds)=1 total number of operations=313331
+313331, 15
+# of threads=20 time (seconds)=1 total number of operations=314165
+314165, 20
+# of threads=100 time (seconds)=1 total number of operations=313308
+313308, 100
+# of threads=200 time (seconds)=1 total number of operations=315114
+315114, 200
+# of threads=500 time (seconds)=1 total number of operations=268080
+268080, 500
+# of threads=1000 time (seconds)=1 total number of operations=234806
+234806, 1000
+# of threads=1 time (seconds)=30 total number of operations=125558669
+125558669, 1
+# of threads=2 time (seconds)=30 total number of operations=33814025
+33814025, 2
+# of threads=5 time (seconds)=30 total number of operations=8922155
+8922155, 5
+# of threads=10 time (seconds)=30 total number of operations=9301291
+9301291, 10
+# of threads=15 time (seconds)=30 total number of operations=9266436
+9266436, 15
+# of threads=20 time (seconds)=30 total number of operations=9305924
+9305924, 20
+# of threads=100 time (seconds)=30 total number of operations=9153054
+9153054, 100
+# of threads=200 time (seconds)=30 total number of operations=8982740
+8982740, 200
+# of threads=500 time (seconds)=30 total number of operations=7488044
+7488044, 500
+# of threads=1000 time (seconds)=30 total number of operations=5502835
+5502835, 1000
+# of threads=1 time (seconds)=60 total number of operations=271232259
+271235480, 1
+# of threads=2 time (seconds)=60 total number of operations=76019583
+76019583, 2
+# of threads=5 time (seconds)=60 total number of operations=17379357
+17379357, 5
+# of threads=10 time (seconds)=60 total number of operations=16776974
+16776974, 10
+# of threads=15 time (seconds)=60 total number of operations=17608139
+17608139, 15
+# of threads=20 time (seconds)=60 total number of operations=17463774
+17463774, 20
+# of threads=100 time (seconds)=60 total number of operations=18091613
+18091683, 100
+# of threads=200 time (seconds)=60 total number of operations=18034978
+18034978, 200
+# of threads=500 time (seconds)=60 total number of operations=14952269
+14952269, 500
+# of threads=1000 time (seconds)=60 total number of operations=12689205
+12689208, 1000
+# of threads=1 time (seconds)=90 total number of operations=422073517
+422073517, 1
+# of threads=2 time (seconds)=90 total number of operations=89002391
+89002391, 2
+# of threads=5 time (seconds)=90 total number of operations=27767145
+27767145, 5
+# of threads=10 time (seconds)=90 total number of operations=27915907
+27915907, 10
+# of threads=15 time (seconds)=90 total number of operations=27885567
+27885567, 15
+# of threads=20 time (seconds)=90 total number of operations=28077052
+28077052, 20
+# of threads=100 time (seconds)=90 total number of operations=27732577
+27732577, 100
+# of threads=200 time (seconds)=90 total number of operations=27147573
+27147573, 200
+# of threads=500 time (seconds)=90 total number of operations=22825956
+22825956, 500
+# of threads=1000 time (seconds)=90 total number of operations=19241936
+19241936, 1000
+# of threads=1 time (seconds)=120 total number of operations=561319361
+561319361, 1
+# of threads=2 time (seconds)=120 total number of operations=121554260
+121554260, 2
+# of threads=5 time (seconds)=120 total number of operations=35831909
+35831909, 5
+# of threads=10 time (seconds)=120 total number of operations=37364959
+37364959, 10
+# of threads=15 time (seconds)=120 total number of operations=37180834
+37180834, 15
+# of threads=20 time (seconds)=120 total number of operations=37324622
+37324622, 20
+# of threads=100 time (seconds)=120 total number of operations=36988926
+36988926, 100
+# of threads=200 time (seconds)=120 total number of operations=36283438
+36283438, 200
+# of threads=500 time (seconds)=120 total number of operations=29026290
+29026290, 500
+# of threads=1000 time (seconds)=120 total number of operations=24166955
+24166955, 1000
