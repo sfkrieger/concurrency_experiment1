@@ -138,3 +138,15 @@
 29026290, 500
 # of threads=1000 time (seconds)=120 total number of operations=24166955
 24166955, 1000
+# of threads=1 time (seconds)=1 total number of operations=4716572
+4716572, 1
+# of threads=2 time (seconds)=1 total number of operations=475102
+475102, 2
+# of threads=5 time (seconds)=1 total number of operations=304397
+304397, 5
+# of threads=10 time (seconds)=1 total number of operations=306176
+306176, 10
+# of threads=15 time (seconds)=1 total number of operations=305711
+305711, 15
+# of threads=20 time (seconds)=1 total number of operations=315607
+315607, 20

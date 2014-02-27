@@ -26,15 +26,20 @@ int main(int argc, char *argv[]) {
 
 	//-------- INITIALIZING QUEUE AND LOCKING STRUCTURES ------------------//
 
-	/* zero out the queue */
+	/* zero out the queue info */
 	memset(&q_info, 0, sizeof(q_info));
-//	memset(&q, 0, sizeof(q));
 
+	/* initialize the two locks, one for the
+	 * queue and one for info about operations
+	 */
+
+	/* queue lock */
 	if (pthread_mutex_init(&lock, NULL) != 0) {
 		handle_error("mutex init failed");
 		return 1;
 	}
 
+	/* info on operations requested for queue */
 	if (pthread_mutex_init(&ops_lock, NULL) != 0) {
 		handle_error("mutex init failed");
 		return 1;
@@ -49,6 +54,8 @@ int main(int argc, char *argv[]) {
 
 	num_threads = atoi(argv[2]); /* First arg:  number threads */
 	duration = atoi(argv[4]);/* Second arg:  duration of execution */
+
+	//----------------- THREAD CREATION ----------------------------//
 	threads = malloc(sizeof(pthread_t) * num_threads);
 
 	created_time = (int) time(NULL);
@@ -67,18 +74,19 @@ int main(int argc, char *argv[]) {
 
 	}
 
+	/* once threads are created, sleep for the duration of time */
 	sleep(duration);
 
+	/*upon reawakening... cancel threads*/
 	for (num_created = 0; num_created < num_threads; num_created++) { /* then cancel threads */
 		s = pthread_cancel(threads[num_created]);
 		if (s != 0) {
 			handle_error ("Cancel pthread error!\n");
 			exit(1);
 		}
-
-		//		free(threads[num_created]);
 	}
 
+	/** free memory and destroy locks **/
 	free(threads);
 	pthread_mutex_destroy(&lock);
 	pthread_mutex_destroy(&ops_lock);
@@ -94,7 +102,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	printf("#Êof threads=%dÊtimeÊ(seconds)=%dÊtotalÊnumberÊofÊoperations=%d\n", num_threads, duration, q_info.no_ops);
-
 	fprintf(f,"#ÊofÊthreads=%dÊtimeÊ(seconds)=%dÊtotalÊnumberÊofÊoperations=%d\n", num_threads, duration, q_info.no_ops);
 	fprintf(f,"%d, %d\n", q_info.no_ops, num_threads);
 
@@ -106,6 +113,8 @@ int main(int argc, char *argv[]) {
 void *ThreadMain(void *threadArgs) {
 
 	pthread_detach(pthread_self());
+
+	/* main work for threads */
 	int val = DoOperation();
 
 	if (val != 1) {
@@ -120,12 +129,12 @@ int DoOperation() {
 	generator_state_t *state = NULL;
 	while (load_generator(&myops, &state)) {
 		pthread_mutex_lock(&lock);
-		//these things should be filled now
 		if (q.head > q.tail) {
-//			handle_error("Head is passed tail");
-			//return 0;
+			handle_error("Head is passed tail");
+			return 0;
 		}
 
+		/* depending on the value of myops, enqueue or dequeue a value from the queue */
 		if (myops.operation == 1) { //enque value
 			//add value at tail
 			q.content[q.tail] = myops.value;
@@ -135,23 +144,22 @@ int DoOperation() {
 			//dequeue
 			q.head = q.head + 1;
 		} else {
-//			handle_error("Invalid operation type");
-			//return 0;
+			handle_error("Invalid operation type");
+			return 0;
 		}
 		pthread_mutex_unlock(&lock);
 	}
-	return 1; //todo: not sure about this...
+	return 1;
 
 }
-//Example
+
+//Way to generate information...
 int load_generator(operation_t *op, generator_state_t **s) {
 	pthread_mutex_lock(&ops_lock);
 	q_info.no_ops = q_info.no_ops + 1;
 
 	if (*s == NULL) {
-		*s = (generator_state_t*) malloc(sizeof(generator_state_t)); //initialize state
-		//not sure how to deal with state!!?
-		//		**s = **s + 1;
+		*s = (generator_state_t*) malloc(sizeof(generator_state_t)); //initialize state - this was an artifact of this assignment
 	}
 
 	int random_int = rand();
@@ -169,16 +177,3 @@ int load_generator(operation_t *op, generator_state_t **s) {
 	pthread_mutex_unlock(&ops_lock);
 	return 1; //1 for success, 0 for fail
 }
-
-int whatToDo() {
-	// use the function as follows
-	operation_t myops;
-	generator_state_t *state = NULL;
-	while (load_generator(&myops, &state)) {
-		//do stuff
-	}
-	return 1;
-
-}
-
-
